@@ -31,7 +31,7 @@ function VariantAnimation() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="pointer-events-none absolute inset-0 flex items-end pb-25 justify-center"
+            className="pointer-events-none absolute inset-0 flex items-center pb-25 justify-center"
           >
             <div className="w-[300px] max-w-full bg-white text-black rounded-2xl p-2 pb-6 pointer-events-auto overflow-hidden">
               <header className="flex justify-end">

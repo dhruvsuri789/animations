@@ -35,7 +35,7 @@ export const LayoutAnimationV3 = () => {
                 animate="visible"
                 exit="hidden"
                 transition={{ staggerChildren: 0.03, delayChildren: 0.2 }}
-                className="mb-8 grid w-[500px] grid-cols-2 gap-4 *:rounded-xl *:bg-white *:px-4 *:py-2"
+                className="mb-8 grid w-[400px] grid-cols-2 gap-4 *:rounded-xl *:bg-white *:px-4 *:py-2"
               >
                 {portfolioLinks.map((linkTitle) => (
                   <motion.a
