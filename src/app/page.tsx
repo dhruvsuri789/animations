@@ -1,3 +1,9 @@
+import SquareAnimation from "@/animations/SquareAnimation";
+
 export default function HomePage() {
-  return <div>Hello</div>;
+  return (
+    <div>
+      <SquareAnimation />
+    </div>
+  );
 }

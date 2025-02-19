@@ -1,3 +1,4 @@
+"use client";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import GridComponent from "../components/GridComponent";

@@ -1,11 +1,12 @@
+"use client";
 import { motion } from "motion/react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "@/components/GridComponent";
 
 function SquareAnimation() {
   return (
     <GridComponent animationName="Square Animation">
       <motion.div
-        className="bg-gray-500 w-24 h-24 rounded-3xl"
+        className="w-24 h-24 bg-gray-500 rounded-3xl"
         animate={{
           scale: [1, 2, 2, 1, 1],
           rotate: [0, 90, 180, 270, 360],

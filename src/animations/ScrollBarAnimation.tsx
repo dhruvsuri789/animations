@@ -1,3 +1,4 @@
+"use client";
 import { motion, useScroll, useSpring } from "motion/react";
 import GridComponent from "../components/GridComponent";
 import { useRef } from "react";

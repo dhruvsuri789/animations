@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
 import { motion } from "motion/react";
 import { useState } from "react";
 import { useInterval } from "react-use";

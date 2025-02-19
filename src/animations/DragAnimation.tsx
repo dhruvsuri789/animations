@@ -1,3 +1,4 @@
+"use client";
 import { motion, useMotionValue, useTransform } from "motion/react";
 import GridComponent from "../components/GridComponent";
 
