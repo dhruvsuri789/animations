@@ -3,7 +3,7 @@ import GridComponent from "../components/GridComponent";
 import "../styles/MultiStepStyles.css";
 
 /* 
-origin-top-left: becasue by default the origin is center
+origin-top-left: because by default the origin is center
 */
 function MultiStepAnimation() {
   return (

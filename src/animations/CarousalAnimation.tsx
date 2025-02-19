@@ -2,7 +2,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { useInterval } from "react-use";
-import { quotes } from "../assets/quotes";
+import { quotes } from "@/data/quotes";
 import { Debug, useSpeedControl } from "../components/Debugtools";
 import { ChevronLeft, ChevronRight } from "../components/Icons";
 import GridComponent from "../components/GridComponent";

@@ -2,7 +2,7 @@ import { AnimatePresence } from "motion/react";
 import { useState } from "react";
 import GridComponent from "../components/GridComponent";
 
-import { songs } from "../assets/songs";
+import { songs } from "@/data/songs";
 import { DetailView } from "../components/DetailView";
 import { SongPreview } from "../components/SongPreview";
 
