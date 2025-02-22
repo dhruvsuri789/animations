@@ -23,34 +23,42 @@ import SquareAnimation from "@/animations/frontend-fyi/SquareAnimation";
 import StaggeredAnimation from "@/animations/frontend-fyi/StaggeredAnimation";
 import VariantAnimation from "@/animations/frontend-fyi/VariantAnimation";
 import GridThree from "@/components/GridThree";
+import GridOne from "@/components/GridOne";
+import GridTwo from "@/components/GridTwo";
 
 export default function FrontendAnimationsPage() {
   return (
-    <GridThree>
-      <HelloWorld />
-      <SquareAnimation />
-      <GestureAnimation />
-      <MultiStepAnimation />
-      <MotionValues />
-      <DragAnimation />
-      <CSSVarAnimation />
-      <ExitAnimation />
-      <VariantAnimation />
-      <CarousalAnimation />
-      <StaggeredAnimation />
-      <BreakpointAnimation />
-      <NotificationAnimation />
-      <ScrollViewAnimation />
-      <ScrollViewAnimationV2 />
-      <ScrollBarAnimation />
-      <ScrollBentoAnimation />
-      <ScrollStickyAnimation />
-      <LayoutAnimationV1 />
-      <LayoutAnimationV2 />
-      <LayoutAnimationV3 />
-      <LayoutAnimationV4 />
-      <LayoutAnimationV5 />
-      <GridAnimation />
-    </GridThree>
+    <GridOne>
+      <GridThree>
+        <HelloWorld />
+        <SquareAnimation />
+        <GestureAnimation />
+        <MultiStepAnimation />
+        <MotionValues />
+        <DragAnimation />
+        <CSSVarAnimation />
+        <ExitAnimation />
+        <VariantAnimation />
+        <StaggeredAnimation />
+        <BreakpointAnimation />
+        <NotificationAnimation />
+        <ScrollViewAnimation />
+        <ScrollViewAnimationV2 />
+        <ScrollBarAnimation />
+        <LayoutAnimationV1 />
+        <LayoutAnimationV2 />
+        <LayoutAnimationV3 />
+        <LayoutAnimationV4 />
+        <GridAnimation />
+      </GridThree>
+      <GridTwo>
+        <CarousalAnimation />
+        <LayoutAnimationV5 />
+        <ScrollBentoAnimation />
+      </GridTwo>
+      <GridOne>
+        <ScrollStickyAnimation />
+      </GridOne>
+    </GridOne>
   );
 }

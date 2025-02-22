@@ -16,8 +16,14 @@ export const ScrollStickyAnimation = () => {
   const opacity = useTransform(scrollYProgress, [0.66, 0.72], [1, 0]);
 
   return (
-    <GridComponent animationName="Scroll Sticky Animation">
-      <div ref={containeRef} className="overflow-y-scroll h-[30rem]">
+    <GridComponent
+      animationName="Scroll Sticky Animation"
+      className="min-h-[calc(100vh-10rem)]"
+    >
+      <div
+        ref={containeRef}
+        className="overflow-y-scroll h-[calc(100vh-10rem)]"
+      >
         <div className="h-screen" />
         <div className="h-[300vh]">
           <div className="sticky top-1/2 -translate-y-1/2 text-[68px] text-white overflow-clip space-y-4">
