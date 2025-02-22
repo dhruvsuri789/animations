@@ -67,7 +67,7 @@ function SideNav() {
 
   return (
     <header>
-      <nav className="min-h-screen overflow-y-auto border-r border-slate-800 p-4 flex flex-col gap-1">
+      <nav className="sticky top-0 min-h-screen overflow-y-auto border-r border-slate-800 p-4 flex flex-col gap-1">
         <Link href="/" className="cursor-pointer">
           <Image width={48} height={48} src="/logo.png" alt="Logo" />
         </Link>
