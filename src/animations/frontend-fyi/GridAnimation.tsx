@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "motion/react";
 import { useState } from "react";
-import GridComponent from "../components/GridComponent";
-import "../styles/GridAnimationStyles.css";
+import GridComponent from "@/components/GridComponent";
+import "@/styles/GridAnimationStyles.css";
 
 export const GridAnimation = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);

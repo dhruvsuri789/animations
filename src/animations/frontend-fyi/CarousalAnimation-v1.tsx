@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { useInterval } from "react-use";
 import { quotes } from "@/data/quotes";
-import { Debug, useSpeedControl } from "../components/Debugtools";
-import { ChevronLeft, ChevronRight } from "../components/Icons";
-import GridComponent from "../components/GridComponent";
+import { Debug, useSpeedControl } from "../../components/Debugtools";
+import { ChevronLeft, ChevronRight } from "../../components/Icons";
+import GridComponent from "../../components/GridComponent";
 
 const CarousalAnimation = () => {
   const [activeQuoteIndex, setActiveQuoteIndex] = useState(0);

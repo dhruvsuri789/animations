@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { useState } from "react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 const BreakpointAnimation = () => {
   const [isOpened, setIsOpened] = useState(false);

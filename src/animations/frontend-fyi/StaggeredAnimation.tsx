@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { useState } from "react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 // In a real app we of course should have a url for each item too.
 const menuItems = ["Home", "Invoices", "Usage", "Profile", "Settings"];

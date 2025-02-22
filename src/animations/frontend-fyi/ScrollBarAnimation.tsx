@@ -1,6 +1,6 @@
 "use client";
 import { motion, useScroll, useSpring } from "motion/react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 import { useRef } from "react";
 
 // A small placeholder component to give us some room to scroll.

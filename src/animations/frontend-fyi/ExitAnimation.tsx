@@ -1,6 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "motion/react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 import { useState } from "react";
 
 function ExitAnimation() {

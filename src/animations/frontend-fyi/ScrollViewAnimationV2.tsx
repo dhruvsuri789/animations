@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 export const ScrollViewAnimationV2 = () => {
   return (

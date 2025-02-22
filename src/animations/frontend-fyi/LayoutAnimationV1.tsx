@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { useState } from "react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 export const LayoutAnimationV1 = () => {
   const [sent, setSent] = useState(false);

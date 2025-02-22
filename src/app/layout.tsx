@@ -1,8 +1,7 @@
+import SideNav from "@/components/SideNav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SideNav from "@/components/SideNav";
-import Grid from "@/components/Grid";
 
 const interSans = Inter({
   subsets: ["latin"],
@@ -23,9 +22,7 @@ export default function RootLayout({
     <html lang="en" className={interSans.className}>
       <body className="antialiased grid grid-cols-[270px_1fr] text-slate-300">
         <SideNav />
-        <main className="p-8">
-          <Grid>{children}</Grid>
-        </main>
+        <main className="p-8">{children}</main>
       </body>
     </html>
   );

@@ -19,11 +19,11 @@ const LinkComponent = ({
   return (
     <Link
       href={href}
-      className={`block w-full text-sm font-semibold rounded-md px-3 py-2 hover:text-white hover:bg-slate-800 transition-colors ${
+      className={`flex items-center w-full text-sm font-semibold rounded-md px-3 py-2 hover:text-white hover:bg-slate-800 transition-colors ${
         isActive ? "text-white bg-slate-800" : "text-slate-400"
       }`}
     >
-      <span className="mr-3 px-2 py-1 rounded-lg border border-slate-600">
+      <span className="flex items-center justify-center w-7 h-7 mr-3 px-2 py-1 rounded-lg border border-slate-600">
         {icon}
       </span>
       {children}
@@ -51,8 +51,12 @@ type LinksProps = Array<
 >;
 
 const Links: LinksProps = [
-  { href: "/", title: "Motion Animations", icon: "M" },
-  { href: "/frontend-animations", title: "Frontend Animations", icon: "B" },
+  { heading: "Framer Motion" },
+  { href: "/", title: "Motion.dev", icon: "M" },
+  { href: "/frontend-fyi", title: "Frontend FYI", icon: "F" },
+  { href: "/animations-dev", title: "Animations.dev", icon: "A" },
+  { href: "/buildui", title: "Buildui", icon: "B" },
+  { heading: "GSAP Animations" },
 ];
 
 function SideNav() {
@@ -64,7 +68,7 @@ function SideNav() {
   return (
     <header>
       <nav className="min-h-screen overflow-y-auto border-r border-slate-800 p-4 flex flex-col gap-1">
-        <Link href="/" className="cursor-pointer mb-6">
+        <Link href="/" className="cursor-pointer">
           <Image width={48} height={48} src="/logo.png" alt="Logo" />
         </Link>
         {Links.map((link, index) => (

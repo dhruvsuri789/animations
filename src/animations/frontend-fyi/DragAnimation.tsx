@@ -1,6 +1,6 @@
 "use client";
 import { motion, useMotionValue, useTransform } from "motion/react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 function DragAnimation() {
   const x = useMotionValue(0);

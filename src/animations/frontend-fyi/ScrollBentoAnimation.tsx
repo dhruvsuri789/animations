@@ -1,7 +1,7 @@
 "use client";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 const cardInViewVariants = {
   inView: {
@@ -64,15 +64,15 @@ type GridProps = {
 };
 
 const FadeIn = ({ children, className, containerRef }: GridProps) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const childRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    container: containerRef,
-    target: ref,
+    // container: containerRef,
+    target: childRef,
     offset: ["start end", "end start"],
   });
 
-  console.log("ref + scroll", containerRef, scrollYProgress);
+  // console.log("ref + scroll", containerRef, scrollYProgress);
 
   const opacity = useTransform(
     scrollYProgress,
@@ -81,7 +81,7 @@ const FadeIn = ({ children, className, containerRef }: GridProps) => {
   );
 
   return (
-    <motion.div style={{ opacity }} ref={ref} className={className}>
+    <motion.div style={{ opacity }} ref={childRef} className={className}>
       {children}
     </motion.div>
   );
@@ -132,7 +132,7 @@ export const ScrollBentoAnimation = () => {
         <div className="h-[30rem] text-white grid place-items-start">
           Gotta scroll down 👇
         </div>
-        <div className="flex w-full flex-col items-center px-8">
+        <div className="flex w-full flex-col items-center px-2">
           {/* Animate using useInView */}
           <GridOne />
 

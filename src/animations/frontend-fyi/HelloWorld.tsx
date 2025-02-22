@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 /* const Button = forwardRef((props, ref: ForwardedRef<HTMLButtonElement>) => {
   return <button ref={ref}>...</button>;

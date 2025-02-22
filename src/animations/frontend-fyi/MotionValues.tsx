@@ -1,6 +1,6 @@
 "use client";
 import { motion, useMotionValue, useTransform } from "motion/react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 function MotionValues() {
   /* const scale = useSpring(1, {

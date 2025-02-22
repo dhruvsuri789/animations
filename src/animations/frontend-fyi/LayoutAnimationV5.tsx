@@ -1,11 +1,11 @@
 "use client";
 import { AnimatePresence } from "motion/react";
 import { useState } from "react";
-import GridComponent from "../components/GridComponent";
+import GridComponent from "../../components/GridComponent";
 
 import { songs } from "@/data/songs";
-import { DetailView } from "../components/DetailView";
-import { SongPreview } from "../components/SongPreview";
+import { DetailView } from "../../components/DetailView";
+import { SongPreview } from "../../components/SongPreview";
 
 type Song = {
   id: number;

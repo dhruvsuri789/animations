@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "motion/react";
-import GridComponent from "../components/GridComponent";
-import "../styles/MultiStepStyles.css";
+import GridComponent from "../../components/GridComponent";
+import "@/styles/MultiStepStyles.css";
 
 /* 
 origin-top-left: because by default the origin is center
