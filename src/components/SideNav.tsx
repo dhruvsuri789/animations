@@ -57,6 +57,7 @@ const Links: LinksProps = [
   { href: "/animations-dev", title: "Animations.dev", icon: "A" },
   { href: "/buildui", title: "Buildui", icon: "B" },
   { heading: "GSAP Animations" },
+  { href: "/gsap-mouse-anim", title: "Mouse Related", icon: "M" },
 ];
 
 function SideNav() {

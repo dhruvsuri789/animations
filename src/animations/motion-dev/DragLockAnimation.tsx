@@ -21,7 +21,7 @@ export default function DragLockAnimation() {
         dragTransition={{ bounceStiffness: 500, bounceDamping: 15 }}
         dragElastic={0.2}
         whileDrag={{ cursor: "grabbing" }}
-        className="w-[52px] h-[52px] border border-[#f5f5f5] border-solid absolute"
+        className="w-[52px] h-[52px] border border-[#f5f5f5] border-solid absolute cursor-pointer"
       />
     </GridComponent>
   );
