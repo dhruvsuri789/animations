@@ -56,6 +56,7 @@ const Links: LinksProps = [
   { href: "/frontend-fyi", title: "Frontend FYI", icon: "F" },
   { href: "/animations-dev", title: "Animations.dev", icon: "A" },
   { href: "/buildui", title: "Buildui", icon: "B" },
+  { href: "/framer-mouse-anim", title: "Mouse Related", icon: "M" },
   { heading: "GSAP Animations" },
   { href: "/gsap-mouse-anim", title: "Mouse Related", icon: "M" },
 ];

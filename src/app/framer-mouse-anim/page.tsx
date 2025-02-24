@@ -1,10 +1,10 @@
-import MouseAnimation from "@/animations/gsap-anim/MouseAnimation";
+import PointerAnimation from "@/animations/motion-dev/PointerAnimation";
 import GridTwo from "@/components/GridTwo";
 
 function page() {
   return (
     <GridTwo>
-      <MouseAnimation />
+      <PointerAnimation />
     </GridTwo>
   );
 }

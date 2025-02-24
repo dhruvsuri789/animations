@@ -1,28 +1,32 @@
 "use client";
 
 import GridComponent from "@/components/GridComponent";
-import { cn } from "@/utils/cn";
 import { motion } from "motion/react";
 import { useState } from "react";
 
+const spring = { type: "spring", visualDuration: 0.5, bounce: 0.8 };
+
 export default function SpringAnimation() {
   const [state, setState] = useState(false);
+
+  const animVariants = {
+    left: {
+      transform: "translateX(-100%) rotate(0deg)",
+    },
+    right: {
+      transform: "translateX(100%) rotate(180deg)",
+    },
+  };
 
   return (
     <GridComponent animationName="Spring Animation">
       <div className="flex flex-col items-center justify-center gap-5">
         <motion.div
           className="w-24 h-24 bg-[#4ff0b7] rounded-md"
-          style={{
-            transform: state
-              ? "translateX(100%) rotate(180deg)"
-              : "translateX(-100%) rotate(0deg)",
-          }}
-          transition={{
-            type: "spring",
-            visualDuration: 0.5,
-            bounce: 0.8,
-          }}
+          initial="left"
+          animate={state ? "left" : "right"}
+          variants={animVariants}
+          transition={spring}
         />
         <button
           onClick={() => setState(!state)}

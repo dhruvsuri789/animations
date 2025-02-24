@@ -41,7 +41,7 @@ export default function PointerAnimation() {
       <motion.div
         ref={ref}
         style={{ x, y }}
-        className="w-[100px] h-[100px] bg-[#ff0088] rounded-full"
+        className="w-[100px] h-[100px] bg-[#ff0088] rounded-full fixed top-0 left-0 pointer-events-none"
       />
     </GridComponent>
   );

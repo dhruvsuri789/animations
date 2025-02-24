@@ -6,7 +6,7 @@ import ExitAnimation from "@/animations/motion-dev/ExitAnimation";
 import KeyframeAnimation from "@/animations/motion-dev/KeyframeAnimation";
 import MotionPathAnimation from "@/animations/motion-dev/MotionPathAnimation";
 import NumberAnimation from "@/animations/motion-dev/NumberAnimation";
-import ParallaxAnimation from "@/animations/motion-dev/ParallaxAnimation";
+import PathDrawingAnimation from "@/animations/motion-dev/PathDrawingAnimation";
 import PointerAnimation from "@/animations/motion-dev/PointerAnimation";
 import RotateAnimation from "@/animations/motion-dev/RotateAnimation";
 import SpringAnimation from "@/animations/motion-dev/SpringAnimation";
@@ -39,9 +39,10 @@ export default function HomePage() {
         <ToggleAnimationTwo />
       </GridThree>
       <GridTwo>
-        <PointerAnimation />
+        {/* <PointerAnimation /> */}
         <MotionPathAnimation />
         {/* <ParallaxAnimation /> */}
+        <PathDrawingAnimation />
       </GridTwo>
     </GridOne>
   );
