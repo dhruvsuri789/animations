@@ -11,8 +11,10 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "clsx": "^2.1.1",
+    "flubber": "^0.4.2",
     "motion": "^12.4.4",
     "next": "15.1.7",
+    "popmotion": "^11.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-use": "^17.6.0",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/flubber": "^0.4.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
