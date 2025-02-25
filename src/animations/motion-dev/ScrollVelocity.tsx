@@ -11,21 +11,25 @@ import {
   useVelocity,
   wrap,
 } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface ParallaxProps {
   children: string;
   baseVelocity: number;
   container: React.RefObject<HTMLDivElement | null>;
+  isContainerReady: boolean;
 }
 
 function ParallaxText({
   children,
   baseVelocity = 100,
   container,
+  isContainerReady,
 }: ParallaxProps) {
   const baseX = useMotionValue(0);
-  const { scrollY } = useScroll({ container });
+  const { scrollY } = useScroll({
+    container: isContainerReady ? container : undefined,
+  });
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
@@ -84,15 +88,31 @@ function ParallaxText({
 }
 
 export default function ScrollVelocity() {
+  const [isContainerReady, setContainerReady] = useState(false);
   const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (container.current) {
+      setContainerReady(true);
+    }
+  }, [container]);
+
   return (
     <GridComponent animationName="Scroll Velocity Animation">
-      <div ref={container} className="h-[30rem] overflow-y-scroll">
+      <div ref={container} className="h-[30rem] overflow-y-scroll relative">
         <section className="py-[45vh] relative">
-          <ParallaxText baseVelocity={-5} container={container}>
+          <ParallaxText
+            baseVelocity={-5}
+            container={container}
+            isContainerReady={isContainerReady}
+          >
             Framer Motion
           </ParallaxText>
-          <ParallaxText baseVelocity={5} container={container}>
+          <ParallaxText
+            baseVelocity={5}
+            container={container}
+            isContainerReady={isContainerReady}
+          >
             Scroll velocity
           </ParallaxText>
         </section>

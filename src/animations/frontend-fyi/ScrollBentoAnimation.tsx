@@ -1,6 +1,6 @@
 "use client";
 import { motion, useInView, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import GridComponent from "../../components/GridComponent";
 
 const cardInViewVariants = {
@@ -61,22 +61,31 @@ type GridProps = {
   children: React.ReactNode;
   className?: string;
   containerRef: React.RefObject<HTMLDivElement | null>;
+  isContainerReady: boolean;
 };
 
-const FadeIn = ({ children, className, containerRef }: GridProps) => {
+const FadeIn = ({
+  children,
+  className,
+  containerRef,
+  isContainerReady,
+}: GridProps) => {
   const childRef = useRef<HTMLDivElement>(null);
-
   const { scrollYProgress } = useScroll({
-    // container: containerRef,
+    container: isContainerReady ? containerRef : undefined,
     target: childRef,
     offset: ["start end", "end start"],
   });
 
-  // console.log("ref + scroll", containerRef, scrollYProgress);
+  /* console.log(
+    "isContainerReady + containerRef",
+    isContainerReady,
+    containerRef
+  ); */
 
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.15, 0.8, 1],
+    [0, 0.55, 0.8, 1],
     [0, 1, 1, 0]
   );
 
@@ -89,12 +98,18 @@ const FadeIn = ({ children, className, containerRef }: GridProps) => {
 
 const GridTwo = ({
   containerRef,
+  isContainerReady,
 }: {
   containerRef: React.RefObject<HTMLDivElement | null>;
+  isContainerReady: boolean;
 }) => {
   return (
     <div className="relative grid w-full max-w-[800px] sm:h-[500px] grid-cols-1 sm:grid-cols-2 sm:grid-rows-2 gap-4">
-      <FadeIn className="row-span-2" containerRef={containerRef}>
+      <FadeIn
+        className="row-span-2"
+        containerRef={containerRef}
+        isContainerReady={isContainerReady}
+      >
         <Card
           title="TryPhone 29"
           subtitle="Call me maybe"
@@ -102,7 +117,7 @@ const GridTwo = ({
         />
       </FadeIn>
 
-      <FadeIn containerRef={containerRef}>
+      <FadeIn containerRef={containerRef} isContainerReady={isContainerReady}>
         <Card
           title="BearShots Pro"
           subtitle="Ever heard better?"
@@ -110,7 +125,7 @@ const GridTwo = ({
         />
       </FadeIn>
 
-      <FadeIn containerRef={containerRef}>
+      <FadeIn containerRef={containerRef} isContainerReady={isContainerReady}>
         <Card
           title="Trample Watch"
           subtitle="Right on time"
@@ -122,12 +137,20 @@ const GridTwo = ({
 };
 
 export const ScrollBentoAnimation = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const [isContainerReady, setContainerReady] = useState(false);
+  const container = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (container.current) {
+      setContainerReady(true);
+    }
+  }, [container]);
+
   return (
     <GridComponent animationName="Scroll Bento Animation">
       <div
-        ref={ref}
-        className="grid grid-template-rows-[auto,1fr] justify-items-center self-start h-[30rem] overflow-y-scroll"
+        ref={container}
+        className="grid grid-template-rows-[auto,1fr] justify-items-center self-start h-[30rem] overflow-y-scroll relative"
       >
         <div className="h-[30rem] text-white grid place-items-start">
           Gotta scroll down 👇
@@ -139,7 +162,10 @@ export const ScrollBentoAnimation = () => {
           <div className="text-white py-8 h-[30rem]">some space..</div>
 
           {/* Animate using useScroll */}
-          <GridTwo containerRef={ref} />
+          <GridTwo
+            containerRef={container}
+            isContainerReady={isContainerReady}
+          />
 
           <div className="text-white py-24 h-[30rem]">some 👾👾👾👾</div>
         </div>
