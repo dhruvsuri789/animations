@@ -62,7 +62,7 @@ export default function SharedLayoutAnimation() {
             ))}
           </ul>
         </nav>
-        <main className="flex items-center justify-center flex-1">
+        <div className="flex items-center justify-center flex-1">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedTab ? selectedTab.label : "empty"}
@@ -75,7 +75,7 @@ export default function SharedLayoutAnimation() {
               {selectedTab ? selectedTab.icon : "😋"}
             </motion.div>
           </AnimatePresence>
-        </main>
+        </div>
       </div>
     </GridComponent>
   );

@@ -14,14 +14,19 @@ import NumberAnimation from "@/animations/motion-dev/NumberAnimation";
 import PathDrawingAnimation from "@/animations/motion-dev/PathDrawingAnimation";
 import PathMorphing from "@/animations/motion-dev/PathMorphing";
 import PointerAnimation from "@/animations/motion-dev/PointerAnimation";
+import PopAnimation from "@/animations/motion-dev/PopAnimation";
 import ReorderAnimation from "@/animations/motion-dev/ReorderAnimation";
+import ReorderAnimationOne from "@/animations/motion-dev/ReorderAnimationOne";
+import ReorderAnimationTwo from "@/animations/motion-dev/ReorderAnimationTwo";
 import RotateAnimation from "@/animations/motion-dev/RotateAnimation";
 import ScaleAnimation from "@/animations/motion-dev/ScaleAnimation";
 import ScrollLinkedAnimation from "@/animations/motion-dev/ScrollLinkedAnimation";
 import ScrollTriggered from "@/animations/motion-dev/ScrollTriggeredAnimation";
+import ScrollVelocity from "@/animations/motion-dev/ScrollVelocity";
 import SharedLayoutAnimation from "@/animations/motion-dev/SharedLayoutAnimation";
 import SidebarVariantsAnimation from "@/animations/motion-dev/SidebarVariantsAnimation";
 import SpringAnimation from "@/animations/motion-dev/SpringAnimation";
+import TabAnimation from "@/animations/motion-dev/TabAnimation";
 import TapAnimation from "@/animations/motion-dev/TapAnimation";
 import ToggleAnimation from "@/animations/motion-dev/ToggleAnimation";
 import ToggleAnimationTwo from "@/animations/motion-dev/ToggleAnimationTwo";
@@ -60,6 +65,8 @@ export default function HomePage() {
         {/* <PathMorphing /> */}
         <ConicGradientPointer />
         <ScaleAnimation />
+        <ReorderAnimationOne />
+        <ReorderAnimationTwo />
       </GridThree>
       <GridTwo>
         {/* <PointerAnimation /> */}
@@ -70,9 +77,12 @@ export default function HomePage() {
         <AnimationStates />
         <UseTimeAnimation />
         <SharedLayoutAnimation />
+        {/* <TabAnimation /> */}
         <DragTransformAnimation />
         <SidebarVariantsAnimation />
         <CarouselAnimation />
+        <PopAnimation />
+        <ScrollVelocity />
       </GridTwo>
     </GridOne>
   );
