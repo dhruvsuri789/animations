@@ -25,6 +25,7 @@ import VariantAnimation from "@/animations/frontend-fyi/VariantAnimation";
 import GridThree from "@/components/GridThree";
 import GridOne from "@/components/GridOne";
 import GridTwo from "@/components/GridTwo";
+import AmieAnimation from "@/animations/frontend-fyi/AmieAnimation";
 
 export default function FrontendAnimationsPage() {
   return (
@@ -58,6 +59,7 @@ export default function FrontendAnimationsPage() {
       </GridTwo>
       <GridOne>
         <ScrollStickyAnimation />
+        <AmieAnimation />
       </GridOne>
     </GridOne>
   );
