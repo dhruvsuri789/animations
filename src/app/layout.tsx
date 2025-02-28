@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={interSans.className}>
-      <body className="antialiased grid grid-cols-[270px_1fr] text-slate-300">
+      <body className="antialiased text-slate-300 bg-slate-950">
         <SideNav />
         <main className="p-8">{children}</main>
       </body>
