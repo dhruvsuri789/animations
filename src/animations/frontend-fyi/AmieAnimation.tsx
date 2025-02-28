@@ -1,8 +1,10 @@
 "use client";
 import GridComponent from "@/components/GridComponent";
+import { useHidePageOverflow } from "@/hooks/toggle-page-overflow";
+import { useEscapePress } from "@/hooks/use-escape-press";
 import { useFeatureStore } from "@/libs/store";
 import { cn } from "@/utils/cn";
-import { stagger, useAnimate, useInView } from "motion/react";
+import { motion, stagger, useAnimate, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
 
 type CardProps = {
@@ -34,34 +36,50 @@ const Availablility = ({ id }: CardProps) => {
 };
 
 const Music = ({ id }: CardProps) => {
+  const fullscreenFeature = useFeatureStore((state) => state.fullscreenFeature);
+  const isFullscreen = fullscreenFeature === id;
   return (
     <FeatureCard id={id} gradient={gradients[3]}>
       <img
-        className="rounded-xl shadow-xl absolute top-[10%] left-[10%] w-[20%]"
+        className={cn(
+          "rounded-xl shadow-lg absolute top-[10%] left-[10%] w-[20%] transition-transform",
+          isFullscreen ? "scale-0" : "scale-100"
+        )}
         src="/amie-covers/cover-1.webp"
         alt="cover-song"
       />
       <img
-        className="rounded-xl shadow-xl absolute top-[20%] left-[70%] w-[25%]"
+        className={cn(
+          "rounded-xl shadow-lg absolute top-[20%] left-[70%] w-[25%] transition-transform",
+          isFullscreen ? "scale-0" : "scale-100"
+        )}
         src="/amie-covers/cover-2.webp"
         alt="cover-song"
       />
       <img
-        className="rounded-xl shadow-xl absolute top-[60%] left-[20%] w-[30%]"
+        className={cn(
+          "rounded-xl shadow-lg absolute top-[60%] left-[20%] w-[30%] transition-transform",
+          isFullscreen ? "scale-0" : "scale-100"
+        )}
         src="/amie-covers/cover-3.webp"
         alt="cover-song"
       />
-      <div className="absolute left-[40%] top-20 h-32 w-16 rounded-[96px] shadow-lg bg-[#1ed660]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="-33.4974 -55.829 290.3108 334.974"
+      {!isFullscreen && (
+        <motion.div
+          layoutId="spotify-logo"
+          className="absolute left-[40%] top-20 h-32 w-16 rounded-[96px] shadow-lg bg-[#1ed660]"
         >
-          <path
-            d="M177.707 98.987c-35.992-21.375-95.36-23.34-129.719-12.912-5.519 1.674-11.353-1.44-13.024-6.958-1.672-5.521 1.439-11.352 6.96-13.029 39.443-11.972 105.008-9.66 146.443 14.936 4.964 2.947 6.59 9.356 3.649 14.31-2.944 4.963-9.359 6.6-14.31 3.653m-1.178 31.658c-2.525 4.098-7.883 5.383-11.975 2.867-30.005-18.444-75.762-23.788-111.262-13.012-4.603 1.39-9.466-1.204-10.864-5.8a8.717 8.717 0 015.805-10.856c40.553-12.307 90.968-6.347 125.432 14.833 4.092 2.52 5.38 7.88 2.864 11.968m-13.663 30.404a6.954 6.954 0 01-9.569 2.316c-26.22-16.025-59.223-19.644-98.09-10.766a6.955 6.955 0 01-8.331-5.232 6.95 6.95 0 015.233-8.334c42.533-9.722 79.017-5.538 108.448 12.446a6.96 6.96 0 012.31 9.57M111.656 0C49.992 0 0 49.99 0 111.656c0 61.672 49.992 111.66 111.657 111.66 61.668 0 111.659-49.988 111.659-111.66C223.316 49.991 173.326 0 111.657 0"
-            fill="#ffffff"
-          />
-        </svg>
-      </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-33.4974 -55.829 290.3108 334.974"
+          >
+            <path
+              d="M177.707 98.987c-35.992-21.375-95.36-23.34-129.719-12.912-5.519 1.674-11.353-1.44-13.024-6.958-1.672-5.521 1.439-11.352 6.96-13.029 39.443-11.972 105.008-9.66 146.443 14.936 4.964 2.947 6.59 9.356 3.649 14.31-2.944 4.963-9.359 6.6-14.31 3.653m-1.178 31.658c-2.525 4.098-7.883 5.383-11.975 2.867-30.005-18.444-75.762-23.788-111.262-13.012-4.603 1.39-9.466-1.204-10.864-5.8a8.717 8.717 0 015.805-10.856c40.553-12.307 90.968-6.347 125.432 14.833 4.092 2.52 5.38 7.88 2.864 11.968m-13.663 30.404a6.954 6.954 0 01-9.569 2.316c-26.22-16.025-59.223-19.644-98.09-10.766a6.955 6.955 0 01-8.331-5.232 6.95 6.95 0 015.233-8.334c42.533-9.722 79.017-5.538 108.448 12.446a6.96 6.96 0 012.31 9.57M111.656 0C49.992 0 0 49.99 0 111.656c0 61.672 49.992 111.66 111.657 111.66 61.668 0 111.659-49.988 111.659-111.66C223.316 49.991 173.326 0 111.657 0"
+              fill="#ffffff"
+            />
+          </svg>
+        </motion.div>
+      )}
       <div className="absolute "></div>
     </FeatureCard>
   );
@@ -195,15 +213,28 @@ function FeatureCard({ gradient, children, id }: FeatureCardProps) {
   return (
     <div
       className={cn(
-        "h-full w-full rounded-2xl bg-gradient-to-br absolute inset-0 transition-opacity",
-        gradient,
-        inViewFeature === id ? "opacity-100" : "opacity-0"
+        "h-full w-full rounded-2xl absolute inset-0 transition-opacity",
+        inViewFeature === id
+          ? "active-card opacity-100"
+          : "opacity-0 pointer-events-none"
       )}
     >
+      <div
+        className={cn(
+          "absolute inset-0 bg-gradient-to-br rounded-2xl origin-bottom-left",
+          gradient,
+          "gradient"
+        )}
+      />
       {children}
       <button
-        className="bg-black text-white rounded-xl absolute bottom-6 right-6 px-4 py-2 shadow-lg"
-        onClick={() => setFullscreenFeature(id)}
+        className={cn(
+          "bg-black text-white rounded-xl absolute bottom-6 right-6 px-4 py-2 shadow-lg",
+          "show-me-btn"
+        )}
+        onClick={() => {
+          setFullscreenFeature(id);
+        }}
       >
         Show me
       </button>
@@ -220,7 +251,6 @@ type VisualProps = {
 } & Props;
 
 function Visual({ children, id }: VisualProps) {
-  const fullscreenFeature = useFeatureStore((state) => state.fullscreenFeature);
   return (
     <div
       className={cn(
@@ -234,9 +264,27 @@ function Visual({ children, id }: VisualProps) {
 }
 
 function MusicVisual({ id }: Props) {
+  const fullscreenFeature = useFeatureStore((state) => state.fullscreenFeature);
+  const isFullscreen = fullscreenFeature === id;
   return (
     <Visual id={id}>
       <img src="/amie-covers/window-spotify.png" alt="spotify-cover" />
+      {isFullscreen && (
+        <motion.div
+          layoutId="spotify-logo"
+          className="absolute left-[53%] top-[40%] h-48 w-[10px] rounded-[96px] shadow-lg bg-[#1ed660]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="-33.4974 -55.829 290.3108 334.974"
+          >
+            <path
+              d="M177.707 98.987c-35.992-21.375-95.36-23.34-129.719-12.912-5.519 1.674-11.353-1.44-13.024-6.958-1.672-5.521 1.439-11.352 6.96-13.029 39.443-11.972 105.008-9.66 146.443 14.936 4.964 2.947 6.59 9.356 3.649 14.31-2.944 4.963-9.359 6.6-14.31 3.653m-1.178 31.658c-2.525 4.098-7.883 5.383-11.975 2.867-30.005-18.444-75.762-23.788-111.262-13.012-4.603 1.39-9.466-1.204-10.864-5.8a8.717 8.717 0 015.805-10.856c40.553-12.307 90.968-6.347 125.432 14.833 4.092 2.52 5.38 7.88 2.864 11.968m-13.663 30.404a6.954 6.954 0 01-9.569 2.316c-26.22-16.025-59.223-19.644-98.09-10.766a6.955 6.955 0 01-8.331-5.232 6.95 6.95 0 015.233-8.334c42.533-9.722 79.017-5.538 108.448 12.446a6.96 6.96 0 012.31 9.57M111.656 0C49.992 0 0 49.99 0 111.656c0 61.672 49.992 111.66 111.657 111.66 61.668 0 111.659-49.988 111.659-111.66C223.316 49.991 173.326 0 111.657 0"
+              fill="#ffffff"
+            />
+          </svg>
+        </motion.div>
+      )}
     </Visual>
   );
 }
@@ -259,6 +307,14 @@ export const AmieAnimation = () => {
     (state) => state.lastFullscreenFeature
   );
 
+  const onEscapePress = () => {
+    if (fullscreenFeature) setFullscreenFeature(null);
+  };
+
+  // useLockBodyScroll(!!fullscreenFeature);
+  useHidePageOverflow(!!fullscreenFeature);
+  useEscapePress(onEscapePress);
+
   useEffect(() => {
     if (fullscreenFeature) {
       animate([
@@ -272,6 +328,9 @@ export const AmieAnimation = () => {
           { opacity: 1, scale: 1, pointerEvents: "auto" },
           { at: "<" },
         ],
+        [".active-card .gradient", { opacity: 0, scale: 0 }, { at: "<" }],
+        [".active-card .show-me-btn", { opacity: 0 }, { at: "<" }],
+        [".back-to-site-btn", { opacity: 1, y: 0 }, { at: "<", duration: 0.3 }],
       ]);
     } else {
       animate([
@@ -285,6 +344,13 @@ export const AmieAnimation = () => {
           { opacity: 0, scale: 0.75, pointerEvents: "none" },
           { at: "<" },
         ],
+        [".active-card .gradient", { opacity: 1, scale: 1 }, { at: "<" }],
+        [
+          ".back-to-site-btn",
+          { opacity: 0, y: "300%" },
+          { at: "<", duration: 0.3 },
+        ],
+        [".active-card .show-me-btn", { opacity: 1 }],
       ]);
     }
   }, [fullscreenFeature, animate, lastFullscreenFeature]);
@@ -301,7 +367,10 @@ export const AmieAnimation = () => {
             <feature.visual key={feature.id} id={feature.id} />
           ))}
           <button
-            className="bg-black text-white rounded-xl fixed bottom-0 left-1/2 -translate-x-1/2 px-4 py-2 shadow-lg"
+            className={cn(
+              "bg-black text-white rounded-xl fixed bottom-0 left-1/2 -translate-x-1/2 px-4 py-2 shadow-lg opacity-0 translate-y-[300%]",
+              "back-to-site-btn"
+            )}
             onClick={() => setFullscreenFeature(null)}
           >
             Back to site
@@ -317,7 +386,7 @@ export const AmieAnimation = () => {
               </ul>
             </div>
             <div className="w-full sticky top-0 h-screen flex items-center">
-              <div className="relative w-full aspect-square rounded-2xl bg-slate-100">
+              <div className="relative w-full aspect-square rounded-2xl bg-slate-100 [&:has(>_.active-card)]:bg-transparent">
                 {features.map((feature) => (
                   <feature.card key={feature.id} id={feature.id} />
                 ))}
