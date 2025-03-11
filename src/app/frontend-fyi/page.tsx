@@ -27,6 +27,7 @@ import GridOne from "@/components/GridOne";
 import GridTwo from "@/components/GridTwo";
 import AmieAnimation from "@/animations/frontend-fyi/AmieAnimation";
 import InfiniteMarqueeAnimation from "@/animations/frontend-fyi/InfiniteMarqueeAnimation";
+import StickyNavigation from "@/animations/frontend-fyi/StickyNavigation";
 
 export default function FrontendAnimationsPage() {
   return (

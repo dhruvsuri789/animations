@@ -62,9 +62,10 @@ const Links: LinksProps = [
   { href: "/frontend-fyi", title: "Frontend FYI", icon: "F" },
   { href: "/animations-dev", title: "Animations.dev", icon: "A" },
   { href: "/buildui", title: "Buildui", icon: "B" },
-  { href: "/framer-mouse-anim", title: "Mouse Related", icon: "M" },
+  { href: "/framer-full-page-hover-anim", title: "Hover Animation", icon: "H" },
+  { href: "/full-page-sticky", title: "Sticky Navigation", icon: "S" },
   { heading: "GSAP Animations" },
-  { href: "/gsap-mouse-anim", title: "Mouse Related", icon: "M" },
+  { href: "/full-page-hover-anim", title: "Hover Animation", icon: "H" },
 ];
 
 function SideNav() {
