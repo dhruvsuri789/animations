@@ -26,6 +26,7 @@ import GridThree from "@/components/GridThree";
 import GridOne from "@/components/GridOne";
 import GridTwo from "@/components/GridTwo";
 import AmieAnimation from "@/animations/frontend-fyi/AmieAnimation";
+import InfiniteMarqueeAnimation from "@/animations/frontend-fyi/InfiniteMarqueeAnimation";
 
 export default function FrontendAnimationsPage() {
   return (
@@ -60,6 +61,7 @@ export default function FrontendAnimationsPage() {
       <GridOne>
         <ScrollStickyAnimation />
         <AmieAnimation />
+        <InfiniteMarqueeAnimation />
       </GridOne>
     </GridOne>
   );
