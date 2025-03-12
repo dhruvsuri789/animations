@@ -1,5 +1,5 @@
 "use client";
-import GridComponent from "@/components/GridComponent";
+
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useRef, useState } from "react";
 

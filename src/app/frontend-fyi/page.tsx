@@ -27,7 +27,7 @@ import GridOne from "@/components/GridOne";
 import GridTwo from "@/components/GridTwo";
 import AmieAnimation from "@/animations/frontend-fyi/AmieAnimation";
 import InfiniteMarqueeAnimation from "@/animations/frontend-fyi/InfiniteMarqueeAnimation";
-import StickyNavigation from "@/animations/frontend-fyi/StickyNavigation";
+import TextStaggeredAnimation from "@/animations/frontend-fyi/TextStaggeredAnimation";
 
 export default function FrontendAnimationsPage() {
   return (
@@ -58,6 +58,7 @@ export default function FrontendAnimationsPage() {
         <CarousalAnimation />
         <LayoutAnimationV5 />
         <ScrollBentoAnimation />
+        <TextStaggeredAnimation />
       </GridTwo>
       <GridOne>
         <ScrollStickyAnimation />
