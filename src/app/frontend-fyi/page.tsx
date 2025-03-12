@@ -1,4 +1,4 @@
-import HelloWorld from "@/animations/frontend-fyi/HelloWorld";
+import AmieAnimation from "@/animations/frontend-fyi/AmieAnimation";
 import BreakpointAnimation from "@/animations/frontend-fyi/BreakpointAnimation";
 import CarousalAnimation from "@/animations/frontend-fyi/CarousalAnimation";
 import CSSVarAnimation from "@/animations/frontend-fyi/CSSVarAnimation";
@@ -6,6 +6,8 @@ import DragAnimation from "@/animations/frontend-fyi/DragAnimation";
 import ExitAnimation from "@/animations/frontend-fyi/ExitAnimation";
 import GestureAnimation from "@/animations/frontend-fyi/GestureAnimation";
 import GridAnimation from "@/animations/frontend-fyi/GridAnimation";
+import HelloWorld from "@/animations/frontend-fyi/HelloWorld";
+import InfiniteMarqueeAnimation from "@/animations/frontend-fyi/InfiniteMarqueeAnimation";
 import LayoutAnimationV1 from "@/animations/frontend-fyi/LayoutAnimationV1";
 import LayoutAnimationV2 from "@/animations/frontend-fyi/LayoutAnimationV2";
 import LayoutAnimationV3 from "@/animations/frontend-fyi/LayoutAnimationV3";
@@ -21,13 +23,11 @@ import ScrollViewAnimation from "@/animations/frontend-fyi/ScrollViewAnimation";
 import ScrollViewAnimationV2 from "@/animations/frontend-fyi/ScrollViewAnimationV2";
 import SquareAnimation from "@/animations/frontend-fyi/SquareAnimation";
 import StaggeredAnimation from "@/animations/frontend-fyi/StaggeredAnimation";
-import VariantAnimation from "@/animations/frontend-fyi/VariantAnimation";
-import GridThree from "@/components/GridThree";
-import GridOne from "@/components/GridOne";
-import GridTwo from "@/components/GridTwo";
-import AmieAnimation from "@/animations/frontend-fyi/AmieAnimation";
-import InfiniteMarqueeAnimation from "@/animations/frontend-fyi/InfiniteMarqueeAnimation";
 import TextStaggeredAnimation from "@/animations/frontend-fyi/TextStaggeredAnimation";
+import VariantAnimation from "@/animations/frontend-fyi/VariantAnimation";
+import GridOne from "@/components/GridOne";
+import GridThree from "@/components/GridThree";
+import GridTwo from "@/components/GridTwo";
 
 export default function FrontendAnimationsPage() {
   return (

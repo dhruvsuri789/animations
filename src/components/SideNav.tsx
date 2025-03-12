@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { MenuIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface LinkComponentProps {
   children: React.ReactNode;
@@ -62,9 +62,12 @@ const Links: LinksProps = [
   { href: "/frontend-fyi", title: "Frontend FYI", icon: "F" },
   { href: "/animations-dev", title: "Animations.dev", icon: "A" },
   { href: "/buildui", title: "Buildui", icon: "B" },
+  { heading: "Framer Motion - Full Page" },
   { href: "/framer-full-page-hover-anim", title: "Hover Animation", icon: "H" },
   { href: "/full-page-sticky", title: "Sticky Navigation", icon: "S" },
+  { href: "/framer-full-page-mask-anim", title: "Mask Animation", icon: "M" },
   { heading: "GSAP Animations" },
+  { heading: "GSAP Animations - Full Page" },
   { href: "/full-page-hover-anim", title: "Hover Animation", icon: "H" },
 ];
 
