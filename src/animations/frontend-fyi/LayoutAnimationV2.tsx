@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import { motion } from "motion/react";
 import { useState } from "react";
